@@ -1,0 +1,234 @@
+/* Custom CSS */
+
+/* Include Fonts */
+@font-face 
+{
+	font-family: Monserga;
+	src: url(../fonts/custom/Monserga-regular-FFP.ttf);
+}
+
+@font-face 
+{
+	font-family: Monserga;
+	src: url(../fonts/custom/Monserga-regular-FFP.ttf);
+}
+
+/* ID's only */
+#mun_clock
+{
+	font-size: 1.5rem;
+	float: right;
+	font-weight: bold;
+}
+
+#mun_title
+{
+	margin-top: 150px;
+	font-size: 5rem;
+	float: right;
+	letter-spacing: 4px;
+	color: #ebebeb;
+	font-family: Monserga;
+}
+#mun_load
+{
+	position: absolute;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	margin: 10% 0 0 35%;
+}
+
+/* Tags and classes */
+body
+{
+	background: -moz-linear-gradient(35deg, rgba(25,9,163,1) 0%, rgba(25,9,163,1) 30%, rgba(119,10,140,1) 70%, rgba(119,10,140,1) 100%); /* ff3.6+ */
+	background: -webkit-gradient(linear, left bottom, right top, color-stop(0%, rgba(25,9,163,1)), color-stop(30%, rgba(25,9,163,1)), color-stop(70%, rgba(119,10,140,1)), color-stop(100%, rgba(119,10,140,1))); /* safari4+,chrome */
+	background: -webkit-linear-gradient(35deg, rgba(25,9,163,1) 0%, rgba(25,9,163,1) 30%, rgba(119,10,140,1) 70%, rgba(119,10,140,1) 100%); /* safari5.1+,chrome10+ */
+	background: -o-linear-gradient(35deg, rgba(25,9,163,1) 0%, rgba(25,9,163,1) 30%, rgba(119,10,140,1) 70%, rgba(119,10,140,1) 100%); /* opera 11.10+ */
+	background: -ms-linear-gradient(35deg, rgba(25,9,163,1) 0%, rgba(25,9,163,1) 30%, rgba(119,10,140,1) 70%, rgba(119,10,140,1) 100%); /* ie10+ */
+	background: linear-gradient(35deg, rgba(25,9,163,1) 0%, rgba(25,9,163,1) 30%, rgba(119,10,140,1) 70%, rgba(119,10,140,1) 100%); /* w3c */
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#770A8C', endColorstr='#1909A3',GradientType=0 ); /* ie6-9 */
+	min-height: 50rem;
+	padding-top: 4.5rem;
+}
+
+.path 
+{
+	stroke-dasharray: 1000;
+	stroke-dashoffset: 1000;
+	animation: dash 5s linear alternate infinite;
+}
+
+.mun-icon
+{
+	margin-left: -250px;
+	width: 45rem;
+	float: left;
+	top: 0;
+	-webkit-animation-name: spin;
+	-webkit-animation-duration: 4000ms;
+	-webkit-animation-iteration-count: infinite;
+	-webkit-animation-timing-function: linear;
+	-moz-animation-name: spin;
+	-moz-animation-duration: 4000ms;
+	-moz-animation-iteration-count: infinite;
+	-moz-animation-timing-function: linear;
+	-ms-animation-name: spin;
+	-ms-animation-duration: 4000ms;
+	-ms-animation-iteration-count: infinite;
+	-ms-animation-timing-function: linear;
+	animation-name: spin;
+	animation-duration: 4000ms;
+	animation-iteration-count: infinite;
+	animation-timing-function: linear;
+}
+
+.mun_subtitle
+{
+	font-size: 2rem;
+	float: right;
+	font-weight: bold;
+	color: #ebebeb;
+	text-align:right;
+}
+.muntext 
+{
+	background: -webkit-linear-gradient(rgba(25,9,163,1), rgba(119,10,140,1));
+	-webkit-background-clip: text;
+	-webkit-text-fill-color: transparent;
+}
+
+.footer
+{
+  bottom: 0;
+  width: 100%;
+  /* Set the fixed height of the footer here */
+  height: 60px;
+  line-height: 60px; /* Vertically center the text there */
+  background-color: #111315;
+}
+
+/* Animations */
+
+@keyframes draw {
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+
+@keyframes dash {
+  from {
+    stroke-dashoffset: 1000;
+  }
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+
+@-ms-keyframes spin 
+{
+    from { -ms-transform: rotate(0deg); }
+    to { -ms-transform: rotate(360deg); }
+}
+@-moz-keyframes spin 
+{
+    from { -moz-transform: rotate(0deg); }
+    to { -moz-transform: rotate(360deg); }
+}
+@-webkit-keyframes spin 
+{
+    from { -webkit-transform: rotate(0deg); }
+    to { -webkit-transform: rotate(360deg); }
+}
+@keyframes spin 
+{
+    from { transform:rotate(0deg); }
+    to { transform:rotate(360deg); }
+}
+
+/* Loader Style */
+#loader-wrapper
+{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1000;
+}
+#loader
+{
+	display: block;
+	position: relative;
+	left: 50%;
+	top: 50%;
+	width: 200px;
+	height: 200px;
+	margin: -75px 0 0 -75px;
+	z-index: 1500;
+}
+
+#loader-wrapper .loader-section
+{
+    position: fixed;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background: #111315;
+    z-index: 1000;
+}
+ 
+#loader-wrapper .loader-section.section-load 
+{
+	left: 0;
+}
+
+.loaded #loader-wrapper .loader-section.section-load 
+{
+    -webkit-transform: translateX(-100%);  /* Chrome, Opera 15+, Safari 3.1+ */
+    -ms-transform: translateX(-100%);  /* IE 9 */
+    transform: translateX(-100%);  /* Firefox 16+, IE 10+, Opera */
+}
+
+.loaded #loader
+{
+	opacity: 0;
+}
+
+.loaded #loader-wrapper
+{
+	visibility: hidden;
+}
+
+.loaded #loader
+{
+	opacity: 0;
+	-webkit-transition: all 0.3s ease-out; 
+	transition: all 0.3s ease-out;
+}
+
+.loaded #loader-wrapper
+{
+	-webkit-transform: translateY(-100%);
+		-ms-transform: translateY(-100%);
+			transform: translateY(-100%);
+
+	-webkit-transition: all 0.3s 0.6s ease-out; 
+			transition: all 0.3s 0.6s ease-out;
+}
+
+.loaded #loader-wrapper .loader-section.section-load
+{
+	-webkit-transition: all 0.7s 0.3s cubic-bezier(0.645, 0.045, 0.355, 1.000); 
+	transition: all 0.7s 0.3s cubic-bezier(0.645, 0.045, 0.355, 1.000);
+}
+
+.no-js #loader-wrapper {
+    display: none;
+}
+.no-js h1 {
+    color: #222222;
+}
+/* change border to transparent and set only border-top to a solid color */
